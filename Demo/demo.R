@@ -24,7 +24,7 @@ activation3<-function(x){
 
 P=c(seq(5,950,5),seq(955,1050,5),seq(1075,1600,25))/300
 
-
+############Example 1##############
 psi=10/3 #n/d
 
 Results=c()
@@ -36,11 +36,32 @@ for (iter in P){
   psi2=(iter)
   psi3=(iter*3)
   complexity=c(complexity,(psi1+psi2+psi3)/psi)
-  values=getvalue(lbd=0.0001,psi=10/3,F1=1,tau = 0.1,activation1,activation2,activation3,
+  values=getvalue(lbd=0.0001,psi=psi,F1=1,tau = 0.1,activation1,activation2,activation3,
                   psi1,psi2,psi3)
   
   Results<-c(Results,mainvalue(values))
 
+}
+
+
+plot(complexity,Results,type="l")
+
+
+
+############Example 2##############
+Results=c()
+complexity=c()
+for (iter in P){
+  
+  #This is N_j/d
+  psi1=(iter)
+  psi2=(iter)
+  complexity=c(complexity,(psi1+psi2)/psi)
+  values=getvalue(lbd=0.001,psi=psi,F1=1,tau = 0.1,activation1,psi1,activation2
+                  ,psi2)
+  
+  Results<-c(Results,mainvalue(values))
+  s
 }
 
 
