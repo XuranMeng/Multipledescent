@@ -1,1 +1,1 @@
-1
+This is an example to teach you how to use MRFM. For any MRFM, we first define a function getvalue(...) so that we can get all hyperparameter information. The theoretical results can be obtained from "mainvalue" function.  You may also use "getuniquesolution" to get the fixed point of the nu-system, use "MatrixV, MatrixH" to get the auxiliary matrices. 
